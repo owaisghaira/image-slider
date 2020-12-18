@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .size{
+        width: 500px;
+        height: 400px;
+    }
+    body{
+        display: flex;
+    }
+</style>
+<body>
+    <button onclick="previous()">Previous</button>
+    <img id="image" class="size" src="images/pic1.jpg" alt="">
+    <button onClick="Next()">Next</button>
+
+</body>
+<script>
+    var i = 1 ;
+    var image = ['images/pic1.jpg','images/pic2.jpg','images/pic3.jpg','images/pic4.jpg','images/pic5.jpeg']
+  
+    function Next(){
+            
+            document.getElementById('image').src = image[i];
+            i++
+            if (i >= image.length){ i = 0 }
+            
+    }
+    var v = 4
+    function previous(){
+        document.getElementById('image').src = image[v];
+            v--
+            if (v <= 0){ v = 4 }
+    }
+    
+</script>
+</html>
